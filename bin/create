@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../app'
+
+files = Dir.glob('conf.d/**')
+provider = StaticProvider.new
+
+files.each do |file|
+  provider.register(JSON.parse(File.read(file)))
+end
+
+config = Config.new
+config.register(provider)
+
+puts config.get(:vpcs)

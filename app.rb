@@ -1,6 +1,9 @@
 require 'bundler/setup'
 
-require 'lib/config'
+require 'json'
+
+require_relative 'lib/config'
+require_relative 'lib/static_provider'
 
 module App
   def name
