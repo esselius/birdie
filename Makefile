@@ -1,5 +1,5 @@
 include tacos/Makefile
 
-.PHONY: create
-create: build
-	$(AWS_DOCKER_RUN) create
+.PHONY: dry_run
+dry_run: build
+	$(AWS_DOCKER_RUN) dry_run

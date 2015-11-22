@@ -12,4 +12,6 @@ end
 config = Config.new
 config.register(provider)
 
-puts config.get(:vpcs)
+provisioner = Provisioner.new(Aws::EC2::Client.new(stub_responses: true))
+
+provisioner.create(config.get(:vpcs))
